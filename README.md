@@ -1,30 +1,46 @@
-# 角色素材清单
+# 项目验收答辩 PPT · RogueDeck 三层内容
 
-每个职业三个版本：
-- `*_portrait.jpg` — 高清肖像立绘（UI/选角/过场用）
-- `*_turnaround.jpg` — 三视图（正/侧/背，参考用，便于补动作帧时查看角色结构）
-- `*_pixel.jpg` — 游戏内像素立绘（实际在地图上绘制的版本）
+> 自动生成脚本：`./_gen_pptx.py`
+> 输出：`./RogueDeck_项目验收答辩.pptx`
+> 自检：`./_validate.py`（无越界、字号合规）
 
-## 战士 (warrior) — 银甲长剑
+## 13 页结构
 
-| 用途 | 文件 |
-|------|------|
-| 立绘 | `warrior/warrior_portrait.jpg` |
-| 三视图 | `warrior/warrior_turnaround.jpg` |
-| 像素立绘 | `warrior/warrior_pixel.jpg` |
+| # | 标题 | 类型 | 关键内容 |
+|---|---|---|---|
+| 1 | 封面 | hero | RogueDeck · 三层内容 · 项目验收答辩 |
+| 2 | 目录 | supporting | 5 章节编号+中文+英文+摘要+页码 |
+| 3 | 01 项目概览 | section | 藏蓝底 + 大数字 01 + 3 要点 |
+| 4 | 项目定位与技术栈 | content | 左 60% 架构图（四层）+ 右 40% 目标+6 KPI |
+| 5 | 核心功能一览 | content | 顶部三层流程 + 下方 6 卡片（21 武器/19 遗物/5 宝石/10 事件/8 药水/3 职业）|
+| 6 | 02 三层递进玩法 | section | 大数字 02 + 3 要点 |
+| 7 | 三层地图与战斗系统 | content | 左大图（三层地图线稿）+ 右战斗机制 4 段 |
+| 8 | 03 AI 协作·核心 20 分 | section | 大数字 03 + 20 分拆解 |
+| 9 | **AI 协作 20 分详解（hero）** | hero | 上：批判性思维 3 栏（纠错 4 例+验证 5 重+边界 2 例）；下：协作过程（流程+轮次+分工表）|
+| 10 | 04 测试与质量 | section | 大数字 04 + 3 要点 |
+| 11 | 18 套测试+三重验证 | content | 左 18 套测试表 + 右 KPI 三联数+三重验证流程+关键判断 |
+| 12 | 05 演示与总结 | section | 大数字 05 + 3 要点 |
+| 13 | 致谢 | hero | 藏蓝底 + "感谢聆听" + 邀请提问 |
 
-## 法师 (mage) — 银发黑袍紫晶法杖
+## 评分项对应
 
-| 用途 | 文件 |
-|------|------|
-| 立绘 | `mage/mage_portrait.jpg` |
-| 三视图 | `mage/mage_turnaround.jpg` |
-| 像素立绘 | `mage/mage_pixel.jpg` |
+- **功能(10)** → p4, p5（架构 + 6 卡片量化）
+- **界面(10)** → p7（地图 + 战斗系统）
+- **创新(10)** → p5（三层递进）+ p7（决策曲线先增后收）
+- **AI 协作(20)** → **p9 单独一页（hero，评分细则硬要求）**
+- **演示(10)** → 整体节奏（13 页 5-10 分钟）
 
-## 召唤师 (summoner) — 蓝发蓝裙叶藤法杖
+## 重新生成
 
-| 用途 | 文件 |
-|------|------|
-| 立绘 | `summoner/summoner_portrait.jpg` |
-| 三视图 | `summoner/summoner_turnaround.jpg` |
-| 像素立绘 | `summoner/summoner_pixel.jpg` |
+```bash
+python _gen_pptx.py        # 重新生成 PPTX
+python _validate.py        # 校验布局
+```
+
+## 视觉风格
+
+- 学术风：1280×720、藏蓝 #0E3F8C + 主蓝 #1E4FA8、浅蓝 #E8EFF8/#F0F5FC
+- 字体：Microsoft YaHei（中文）+ Times New Roman（英文/数字）
+- 全篇统一 A3 模式页眉（深蓝顶条 8px + 底分隔 + 页脚）
+- 非对称版式 ≥ 40%（p4/p5/p7/p9/p11 均为非对称）
+- 警示红 #D9534F 限频 2 处（仅 AI 协作页纠错案例标签）
